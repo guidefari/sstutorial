@@ -6,6 +6,7 @@ export default {
     return {
       name: "sstutorial",
       region: "us-east-1",
+      profile: "sst"
     };
   },
   stacks(app) {
