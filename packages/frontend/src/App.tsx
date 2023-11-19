@@ -5,10 +5,13 @@ import Routes from "./Routes.tsx";
 import { LinkContainer } from "react-router-bootstrap";
 import { AppContext, AppContextType } from "./lib/contextLib";
 import { useState } from "react";
+import { Auth } from "aws-amplify";
 
 function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
-  function handleLogout() {
+  async function handleLogout() {
+    await Auth.signOut()
+    
     userHasAuthenticated(false);
   }
   
